@@ -1,0 +1,36 @@
+package com.example.amba.pertemuan_3
+
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.amba.R
+import com.example.amba.databinding.ActivityThirdBinding
+
+class ThirdActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityThirdBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        binding = ActivityThirdBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            // Inisialisasi komponen
+
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+        binding.btnSubmit1.setOnClickListener {
+            val btnSubmit1 = binding.inputNama1.text
+            Toast.makeText(this, "Pesan berhasil dikirim ke $btnSubmit1", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
