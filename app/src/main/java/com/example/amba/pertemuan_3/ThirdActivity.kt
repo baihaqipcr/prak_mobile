@@ -1,5 +1,6 @@
 package com.example.amba.pertemuan_3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -29,8 +30,8 @@ class ThirdActivity : AppCompatActivity() {
             insets
         }
         binding.btnSubmit1.setOnClickListener {
-            val btnSubmit1 = binding.inputNama1.text
-            Toast.makeText(this, "Pesan berhasil dikirim ke $btnSubmit1", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ThirdResultActivity::class.java)
+            startActivity(intent)
         }
     }
 }

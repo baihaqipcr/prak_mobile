@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Amba</string>
+    <string name="verif">Verifikasi Login</string>
+    <string name="berhasil">Verifikasi Berhasil Dikirim</string>
 </resources>
