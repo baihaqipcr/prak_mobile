@@ -3,4 +3,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="abu_gelap">#364A5F</color>
+
+    <!-- Primary Colors -->
+    <color name="primary_900">#0D47A1</color>
+    <color name="primary_700">#1976D2</color>
+    <color name="primary_500">#2196F3</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+
+    <!-- Border & Background -->
+    <color name="border_light">#E0E0E0</color>
 </resources>
