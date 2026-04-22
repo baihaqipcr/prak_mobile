@@ -30,7 +30,7 @@
             android:background="@drawable/bg_image_circle"
             android:padding="4dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/jesse_pinkman_s5b"/>
+            app:srcCompat="@drawable/walter_white"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Silakan masuk untuk melanjutkan"
+            android:text="D.E.A Not Allowed"
             android:textSize="13sp"
             android:textColor="#B3FFFFFF"/>
 

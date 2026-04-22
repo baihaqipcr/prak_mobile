@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Amba">
         <activity
-            android:name=".AuthActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity
+            android:name=".AuthActivity"
+            android:exported="true"/>
         <activity
             android:name=".FourthActivity"
             android:exported="false" />
