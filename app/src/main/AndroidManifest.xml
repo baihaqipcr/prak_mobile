@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Amba">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".BaseActivity"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -21,8 +21,14 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".AuthActivity"
+            android:name=".pertemuan_7.SixthActivity"
             android:exported="true"/>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".AuthActivity"
+            android:exported="true" />
         <activity
             android:name=".FourthActivity"
             android:exported="false" />
