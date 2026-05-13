@@ -5,40 +5,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import com.bumptech.glide.Glide
 import com.example.amba.databinding.ItemMessageBinding
-import com.github.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 
 class MessageAdapter(
     context: Context,
-    private val  Messages: List<MessageModel>
-) : ArrayAdapter<MessageModel>(context, 0, Messages) {
+    private val messages: List<MessageModel>
+) : ArrayAdapter<MessageModel>(context, 0, messages) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val binding: ItemMessageBinding
         val view: View
 
-        // 1. Cek apakah ada view yang bisa didaur ulang
         if (convertView == null) {
-            // Jika tidak ada, buat baru (inflate)
             binding = ItemMessageBinding.inflate(LayoutInflater.from(context), parent, false)
             view = binding.root
-            // Simpan binding ke dalam tag view agar bisa dipanggil lagi nanti
             view.tag = binding
         } else {
-            // Jika ada, pakai ulang view yang sudah ada
             view = convertView
             binding = view.tag as ItemMessageBinding
         }
 
-        // 2. Masukkan data ke dalam view
-        val data = Messages[position]
+        val data = messages[position]
 
+        // Perbaikan: Gunakan data.image sesuai model
         Glide.with(context)
-            .load(data.avatarUrl)
+            .load(data.image) // Pastikan field ini sesuai dengan MessageModel
+            .placeholder(android.R.drawable.ic_menu_gallery) // Muncul saat loading
+            .error(android.R.drawable.stat_notify_error)    // Muncul jika gagal download
+            .circleCrop()                                   // Membuat avatar bulat
             .into(binding.avatarImg)
 
         binding.textSender.text = data.senderName
         binding.textMessage.text = data.messageText
+
+        view.setOnClickListener {
+            Snackbar.make(
+                parent,
+                "Pesan dari ${data.senderName}: ${data.messageText}",
+                Snackbar.LENGTH_SHORT
+            ).show()
+        }
 
         return view
     }

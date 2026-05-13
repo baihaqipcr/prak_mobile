@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.amba.databinding.FragmentMessageBinding
 
@@ -13,17 +14,18 @@ class MessageFragment : Fragment() {
     private var _binding: FragmentMessageBinding? = null
     private val binding get() = _binding!!
 
+    // Data dummy untuk pesan
     private val messageList = listOf(
-        MessageModel("Alya", "Halo! Apa kabar?", "https://avatar.iran.liara.run/public/1"),
-        MessageModel("Budi", "Sudah makan?", "https://avatar.iran.liara.run/public/2"),
-        MessageModel("Citra", "Jangan lupa tugasnya ya!", "https://avatar.iran.liara.run/public/3"),
-        MessageModel("Dika", "Besok kita rapat jam 9", "https://avatar.iran.liara.run/public/4"),
-        MessageModel("Eka", "Nice job kemarin!", "https://avatar.iran.liara.run/public/5"),
-        MessageModel("Fajar", "Lagi ngapain?", "https://avatar.iran.liara.run/public/6"),
-        MessageModel("Gita", "Boleh minta tolong?", "https://avatar.iran.liara.run/public/7"),
-        MessageModel("Hana", "Lihat email ya", "https://avatar.iran.liara.run/public/8"),
-        MessageModel("Irfan", "Oke noted", "https://avatar.iran.liara.run/public/9"),
-        MessageModel("Joko", "Sampai jumpa besok", "https://avatar.iran.liara.run/public/10")
+        MessageModel("Arsyad Ronald", "Mclaren lu warna apa bos?","https://randomuser.me/api/portraits/women/20.jpg"),
+        MessageModel("Syabil Muchkin", "Futsal futsall?", "https://randomuser.me/api/portraits/men/33.jpg"),
+        MessageModel("Haji Thariq", "Tolonggg tolonggg", "https://randomuser.me/api/portraits/women/16.jpg"),
+        MessageModel("Rudiono Jawa Timur", "Serlok tak parani! Iyo lat silat", "https://randomuser.me/api/portraits/women/12.jpg"),
+        MessageModel("Fathur Koto", "SENG SENG SENGGG!", "https://randomuser.me/api/portraits/men/32.jpg"),
+        MessageModel("Givo Brainrot", "SIX SEVEN 67!!!!!", "https://randomuser.me/api/portraits/men/35.jpg"),
+        MessageModel("Fila Botaks", "Awak di dumai!!!", "https://randomuser.me/api/portraits/men/10.jpg"),
+        MessageModel("Ilman Bucin", "Ya lah tu", "https://randomuser.me/api/portraits/women/13.jpg"),
+        MessageModel("Farras Vario", "Motor ku di bengkel kamprettt", "https://randomuser.me/api/portraits/women/30.jpg"),
+        MessageModel("Kkdal", "Izin bertanya", "https://randomuser.me/api/portraits/men/32.jpg")
     )
 
     override fun onCreateView(
@@ -37,9 +39,22 @@ class MessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            title = "Message"
+        // Setup Toolbar melalui Activity agar Title muncul dengan benar
+        val appCompatActivity = requireActivity() as AppCompatActivity
+        appCompatActivity.setSupportActionBar(binding.toolbar)
+        appCompatActivity.supportActionBar?.apply {
+            title = "Messages"
+        }
+
+        // Inisialisasi Adapter dan hubungkan ke ListView
+        // Pastikan ID ListView di XML adalah listMessageItems
+        val adapter = MessageAdapter(requireContext(), messageList)
+        binding.listMessageItems.adapter = adapter
+
+        // Tambahkan interaksi klik pada item list
+        binding.listMessageItems.setOnItemClickListener { _, _, position, _ ->
+            val sender = messageList[position].senderName
+            Toast.makeText(requireContext(), "Membuka percakapan dengan $sender", Toast.LENGTH_SHORT).show()
         }
     }
 
