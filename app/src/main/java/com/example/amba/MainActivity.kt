@@ -12,6 +12,7 @@ import com.example.amba.databinding.ActivityMainBinding
 import com.example.amba.pertemuan2.SecondActivity
 import com.example.amba.pertemuan_3.ThirdActivity
 import com.example.amba.pertemuan_7.SixthActivity
+import com.example.amba.pertemuan_9.NinthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

@@ -15,6 +15,7 @@ import com.example.amba.databinding.FragmentHomeBinding
 import com.example.amba.pertemuan2.SecondActivity
 import com.example.amba.pertemuan_3.ThirdActivity
 import com.example.amba.pertemuan_7.SixthActivity
+import com.example.amba.pertemuan_9.NinthActivity
 
 class HomeFragment : Fragment() {
 
@@ -73,6 +74,12 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        // Navigasi ke Pertemuan 9
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(requireContext(),NinthActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Logout")
@@ -81,7 +88,6 @@ class HomeFragment : Fragment() {
                     // Hapus status login
                     val editor = sharedPref.edit()
                     editor.putBoolean("isLogin", false)
-                    // Optional: editor.clear() jika ingin hapus semua data termasuk username
                     editor.apply()
 
                     val intent = Intent(requireContext(), AuthActivity::class.java)

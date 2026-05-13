@@ -43,7 +43,10 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.fragment)
+    implementation("com.github.bumptech.glide:glide:5.0.7")
+    annotationProcessor ("com.github.bumptech.glide:compiler:5.0.7")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }
