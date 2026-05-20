@@ -18,7 +18,7 @@ class MessageFragment : Fragment() {
     private val messageList = listOf(
         MessageModel("Arsyad Ronald", "Mclaren lu warna apa bos?","https://randomuser.me/api/portraits/women/20.jpg"),
         MessageModel("Syabil Muchkin", "Futsal futsall?", "https://randomuser.me/api/portraits/men/33.jpg"),
-        MessageModel("Haji Thariq", "Tolonggg tolonggg", "https://randomuser.me/api/portraits/women/16.jpg"),
+        MessageModel("Haji Thariq", "Tolonggg tolonggg", "https://randomuser.me/api/portraits/women/16.jpg" ),
         MessageModel("Rudiono Jawa Timur", "Serlok tak parani! Iyo lat silat", "https://randomuser.me/api/portraits/women/12.jpg"),
         MessageModel("Fathur Koto", "SENG SENG SENGGG!", "https://randomuser.me/api/portraits/men/32.jpg"),
         MessageModel("Givo Brainrot", "SIX SEVEN 67!!!!!", "https://randomuser.me/api/portraits/men/35.jpg"),
