@@ -15,4 +15,9 @@
         android:icon="@drawable/ic_more"
         android:title="More" />
 
+    <item
+        android:id="@+id/pertemuan_10"
+        android:icon="@drawable/bd_icon_p10"
+        android:title="Pertemuan 10" />
+
 </menu>

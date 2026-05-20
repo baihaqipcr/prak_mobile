@@ -28,6 +28,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".pertemuan_10.TenthActivity"
+            android:exported="true"/>
+
+
         <activity
             android:name=".pertemuan_7.SixthActivity"
             android:exported="true" />
