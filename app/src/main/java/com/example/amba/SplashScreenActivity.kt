@@ -10,6 +10,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.amba.databinding.ActivitySplashScreenBinding
+import com.example.amba.tutorial.TutorialMessageActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -116,9 +117,9 @@ class SplashScreenActivity : AppCompatActivity() {
         val isLogin = sharedPref.getBoolean("isLogin", false)
 
         val intent = if (isLogin) {
-            Intent(this, MainActivity::class.java)
+            Intent(this, BaseActivity::class.java)
         } else {
-            Intent(this, AuthActivity::class.java)
+            Intent(this, TutorialMessageActivity::class.java)
         }
 
         startActivity(intent)

@@ -50,5 +50,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
 
 }
