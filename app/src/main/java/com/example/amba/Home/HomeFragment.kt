@@ -22,6 +22,7 @@ import com.example.amba.pertemuan2.SecondActivity
 import com.example.amba.pertemuan_3.ThirdActivity
 import com.example.amba.pertemuan_7.SixthActivity
 import com.example.amba.pertemuan_9.NinthActivity
+import com.example.amba.pertemuan_13.ThirteenthActivity
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -87,6 +88,12 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        // Navigasi ke Pertemuan 13
+        binding.btnTo13.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Logout")
@@ -105,6 +112,11 @@ class HomeFragment : Fragment() {
                 .setNegativeButton("Tidak", null)
                 .show()
         }
+        
+        binding.btnRefresh.setOnClickListener {
+            loadPhoto()
+        }
+
         loadPhoto()
     }
     override fun onDestroyView() {

@@ -104,6 +104,13 @@
                     android:text="P9" />
 
                 <Button
+                    android:id="@+id/btnTo13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:text="P13" />
+
+                <Button
                     android:id="@+id/btnLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
