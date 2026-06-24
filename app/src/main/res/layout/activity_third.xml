@@ -9,7 +9,7 @@
     tools:context=".pertemuan_3.ThirdActivity">
 
     <Button
-        android:id="@+id/btnSubmit1"
+        android:id="@+id/btnKirim"
         android:layout_width="106dp"
         android:layout_height="49dp"
         android:backgroundTint="@color/abu_gelap"
@@ -17,16 +17,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNama1"
+        app:layout_constraintTop_toBottomOf="@+id/inputNoTujuan"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/inputNama1"
+        android:id="@+id/inputNoTujuan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text=""
+        android:hint="Masukkan No Tujuan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -39,7 +39,7 @@
         android:layout_width="166dp"
         android:layout_height="162dp"
         android:src="@drawable/mobile"
-        app:layout_constraintBottom_toTopOf="@+id/inputNama1"
+        app:layout_constraintBottom_toTopOf="@+id/inputNoTujuan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
